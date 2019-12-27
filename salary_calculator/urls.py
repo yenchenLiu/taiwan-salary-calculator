@@ -1,5 +1,7 @@
 from django.urls import include, path
+from django.conf import settings
+
 
 urlpatterns = [
-    path("", include("calculator.urls"))
+    path(f"{settings.TELEGRAM_TOKEN}", include("calculator.urls"))
 ]
