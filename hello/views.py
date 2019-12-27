@@ -1,19 +1,14 @@
+import os
+import logging
+import requests
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import UpdateResponse
 
-from .models import Greeting
-
+log = logging.getLogger(__name__)
+token = os.environ.get('TOKEN', None)
 # Create your views here.
 def index(request):
-    # return HttpResponse('Hello from Python!')
-    return render(request, "index.html")
-
-
-def db(request):
-
-    greeting = Greeting()
-    greeting.save()
-
-    greetings = Greeting.objects.all()
-
-    return render(request, "db.html", {"greetings": greetings})
+    res = request.json()
+    msg = res['message']
+    return HttpResponse(msg)
