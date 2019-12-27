@@ -5,4 +5,4 @@ ADD . .
 RUN pip install -r requirements.txt
 
 # CMD python manage.py runserver
-CMD gunicorn gettingstarted.wsgi:application --bind 0.0.0.0:8000
+CMD gunicorn salary_calculator.wsgi:application --bind 0.0.0.0:8000
