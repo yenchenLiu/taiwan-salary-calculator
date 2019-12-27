@@ -63,18 +63,20 @@ class CompanySalary(Salary):
     def get_pension(self):
         return round(self.get_pension_level() * self.pension_rate)
 
-salary_input = 80000
-s = Salary(salary_input)
-c = CompanySalary(salary_input)
-print(f"普通事故保險:{s.get_ordinary_incident()}")
-print(f"就業保險:{int(s.get_employment_insurance())}")
-print(f"勞保個人負擔:{s.get_total_labor()}")
-print(f"健保費用:{s.get_health_insurance()}")
-print(f"個人負擔小計:{s.get_total_labor() + s.get_health_insurance()}")
-print(f"實領薪資:{salary_input - (s.get_total_labor() + s.get_health_insurance())}")
-print(f"公司勞保負擔:{c.get_ordinary_incident()}")
-print(f"公司負擔勞保費用:{c.get_total_labor()}")
-print(f"公司負擔健保費用:{c.get_health_insurance()}")
-print(f"公司退休金負擔費用:{c.get_pension()}")
-print(f"公司負擔小計:{c.get_total_labor() + c.get_health_insurance() + c.get_pension()}")
-print(f"公司支出:{c.get_total_labor() + c.get_health_insurance() + c.get_pension() + salary_input}")
+if __name__ == "__main__":
+    salary_input = 80000
+    s = Salary(salary_input)
+    c = CompanySalary(salary_input)
+    print(f"普通事故保險:{s.get_ordinary_incident()}")
+    print(f"就業保險:{int(s.get_employment_insurance())}")
+    print(f"勞保個人負擔:{s.get_total_labor()}")
+    print(f"健保費用:{s.get_health_insurance()}")
+    print(f"個人負擔小計:{s.get_total_labor() + s.get_health_insurance()}")
+    print(f"實領薪資:{salary_input - (s.get_total_labor() + s.get_health_insurance())}")
+    print(f"公司勞保負擔:{c.get_ordinary_incident()}")
+    print(f"公司負擔勞保費用:{c.get_total_labor()}")
+    print(f"公司負擔健保費用:{c.get_health_insurance()}")
+    print(f"公司退休金負擔費用:{c.get_pension()}")
+    print(f"公司負擔小計:{c.get_total_labor() + c.get_health_insurance() + c.get_pension()}")
+    print(f"公司支出:{c.get_total_labor() + c.get_health_insurance() + c.get_pension() + salary_input}")
+    
